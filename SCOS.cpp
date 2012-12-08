@@ -56,6 +56,7 @@ int main() {
         cout << "exponents" <<endl;
         cout << "FOILing" <<endl;
         cout << "fraction" <<endl;
+        cout << "consecutive" <<endl;
         cout << "help" <<endl;
         cout << "exit" <<endl;
 
@@ -275,10 +276,10 @@ int main() {
 
         string opf;
 
-        cout << "type here: ";
+        cout << "type here:";
         cin >> opf;
 
-        if (opf == "adding"){
+        if (opf == "fadd"){
             int a;
             int b;
             int c;
@@ -318,7 +319,7 @@ int main() {
 
             }
         }
-        else if (opf == "multiplication"){
+        else if (opf == "fmulti"){
 
             long a;
             long b;
@@ -341,7 +342,13 @@ int main() {
 
 
         }
-        else if (opf == "deviton"){
+        else if (opf == "fdev"){
+
+
+            long a;
+            long b;
+            long c;
+            long d;
 
             cout << "1st fraction" <<endl;
             cin >> a;
@@ -351,26 +358,76 @@ int main() {
             cin >> c;
             cin >> d;
 
+            a = (a * d);
+            b = (b * c);
 
-
-
-        }
-        else if (opf == "help"){
-
-            cout << "adding" <<endl;
-            cout << "multiplication" <<endl;
-            cout << "deviton" <<endl;
+            cout << a << "/" << b << endl;
 
             goto opf;
         }
-        else if (opf == "exit"){
 
-            goto startPoint;
+        if (opf == "fsub"){
+            int a;
+            int b;
+            int c;
+            int d;
+
+            cout <<"fraction adding"<<endl;
+
+            cout << "1st fraction" <<endl;
+            cin >> a;
+            cin >> b;
+
+            cout << "2nd fraction" <<endl;
+            cin >> c;
+            cin >> d;
+
+        
+            if (b == d){
+
+                a = (a + c);
+
+                cout <<"your anwser" <<endl;
+                cout << a << "/" << b <<endl;
+            }
+            else if (b != d){
+
+                c = (- 1 * c);
+
+                a = (d * a);
+                b = (d * b);
+                c = (b * c);
+            
+
+                a = (a + c);
+
+                cout <<"your anwser" <<endl;
+                cout << a << "/" << b <<endl;
+
+                goto opf;
+            }
+            
+            else if (opf == "help"){
+
+                cout << "fadd" <<endl;
+                cout << "fmulti" <<endl;
+                cout << "fdev" <<endl;
+                cout << "fsub" <<endl;
+
+                goto opf;
+
+                }
+            
+                else if (opf == "exit"){
+
+                goto startPoint;
+                }
+
+
+            
         }
 
-
     }
-
 
 
     else if (op == "about"){ //in case some one whats to know about the app they can type "about"
@@ -382,8 +439,7 @@ int main() {
         cout<<"for the modorn comptuer."<<endl;
 
     }
-
-    
+     
 
     goto startPoint;
 }  
