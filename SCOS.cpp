@@ -8,7 +8,7 @@ int main() {
     clone computers 2012
     by Gio rescigno
     program: 0001
-    vertion: 2.5 
+    vertion: 2.6 
     */ 
 
     string op;
@@ -56,7 +56,7 @@ int main() {
         cout << "exponents" <<endl;
         cout << "FOILing" <<endl;
         cout << "fraction" <<endl;
-        cout << "consecutive" <<endl;
+        cout << "procentage" <<endl;
         cout << "help" <<endl;
         cout << "exit" <<endl;
 
@@ -439,6 +439,26 @@ int main() {
         cout<<"for the modorn comptuer."<<endl;
 
     }
+    else if (op == "procentage"){
+
+        long a;
+        long b;
+        long out;
+
+        cout <<"type in the whole: ";
+        cin >> b;
+        cout <<"type in the part: ";
+        cin >> a;
+
+        a = (a * 100);
+        out = (a / b);
+
+        cout << "%" << out << endl;
+
+
+    }
+
+
      
 
     goto startPoint;
