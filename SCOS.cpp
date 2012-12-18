@@ -1,466 +1,213 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
+
+/*
+prog: SCOS
+by: Gio Rescigno (clone computers)
+repo: LAB progaming
+*/
 
 int main() {
 
-    /* 
-    clone computers 2012
-    by Gio rescigno
-    program: 0001
-    vertion: 2.6 
-    */ 
 
-    string op;
-    long add_1;
-    long add_2;
-    long sub_1;
-    long sub_2;
-    long sumsub;
-    long sumadd;
-    long mitp_1;
-    long mitp_2;
-    long mitpsum;
+	string op;
+	
+	cout<<"welcome to SCOS"<<endl;
+	cout<<"type help it you need help"<<endl;
 
-    
-    cout << "simple calculator OS" <<endl;
-    cout << "Clone Computers 2012" <<endl;
-    cout << "v 2.5 " <<endl;
-    
-    startPoint:
+	startPoint:
 
-    cout << "type here:";
-    cin >> op;
+	cout<<"Operation: ";
+	cin >> op;
 
-    if  (op == "addition")  { // additon
+	if (op == "help"){ //when you type "help" you can see all the commands
 
-        cout << "addition" <<endl;
-        cin >> add_1;
-        cout << "+" ;
-        cin >> add_2;
+		cout<<"add"<<endl;
+		cout<<"sub"<<endl;
+		cout<<"dev"<<endl;
+		cout<<"mul"<<endl;
+		cout<<"pro"<<endl;
+		cout<<"exp"<<endl;
+		cout<<"exit"<<endl;
 
+		goto startPoint;
+	}
+	else if(op == "add"){//addition
 
-        sumadd = add_1 + add_2;
+		long x;
+		long y;
+		long sum;
 
-        cout << sumadd <<endl;
-        goto startPoint;
-    }
-    else if (op == "help"){
+		cout<<"addition"<<endl;
 
-        cout << "addition" <<endl;    
-        cout << "subtraction" <<endl;
-        cout << "multiplication" <<endl;
-        cout << "division" <<endl;
-        cout << "distribution" <<endl;
-        cout << "factorial" <<endl;
-        cout << "exponents" <<endl;
-        cout << "FOILing" <<endl;
-        cout << "fraction" <<endl;
-        cout << "procentage" <<endl;
-        cout << "help" <<endl;
-        cout << "exit" <<endl;
+		cin >> x;
+		cout <<"+"; 
+		cin >> y;
 
-    }
+		sum = (x + y);
 
-    else if (op == "subtraction") { // subtraction
+		cout << x <<" + "<< y <<" = "<< sum <<endl;
 
-        cout << "subtraction" <<endl;
+		goto startPoint;
+	}
+	else if(op == "sub"){//subtraction
 
-        cin >> sub_1;
-        cout << "-";
-        cin >> sub_2;
+		long x;
+		long y;
+		long sum;
 
-        sumsub = sub_1 - sub_2;
+		cout<<"subtraction"<<endl;
 
-        cout << sumsub <<endl;
-        goto startPoint;
-    }
+		cin >> x;
+		cout <<"-"; 
+		cin >> y;
 
-    else if (op == "distribution") { // disto
-        int n;
-        int i;
-        op5:
-        cout << "enter in a number" << endl;
-        cin >> n;
+		sum = (x - y);
 
+		cout << x <<" - "<< y <<" = "<< sum <<endl;
 
-        i = 1;
+		goto startPoint;
+	}
+	else if(op == "mul"){//Multiplication
 
-        if (n == 1){
+		long x;
+		long y;
+		long sum;
 
-            cout << "pick a different number" << endl;
-            goto op5;
-        }
+		cout<<"Multiplication"<<endl;
 
-        while (i < n){
+		cin >> x;
+		cout <<"*"; 
+		cin >> y;
 
+		sum = (x * y);
 
-            cout << i << "+" << (n - i) <<endl;
+		cout << x <<" * "<< y <<" = "<< sum <<endl;
 
-            i++;
-            
-        }
-        goto startPoint;
-    }
+		goto startPoint;
 
-    else if (op == "multiplication") { // miplication
 
-        cout << "multiplication" <<endl;
+	}
+	else if(op == "dev"){//division
 
-        cin >> mitp_1; 
-        cout<< "times";
-        cin >> mitp_2;
+		long x;
+		long y;
+		long sum;
 
-        mitpsum =(mitp_1 * mitp_2);
+		cout<<"division"<<endl;
 
-        cout << mitpsum <<endl;
-        goto startPoint;
-    }
+		cin >> x;
+		cout <<"/"; 
+		cin >> y;
 
-    else if (op == "division"){ //deviton 
+		sum = (x / y);
 
-        cout << "division" <<endl;
+		cout << x <<" / "<< y <<" = "<< sum <<endl;
 
-        long ab; //inp
-        long ba; //inp 
-        long abb;//outp
+		goto startPoint;
 
-        cin >> ab; //this is when the frist number 
-        cout<< "/";
-        cin >> ba; 
 
+	}
+	else if(op == "exp"){//expnets
 
-        abb = (ab / ba); //this is when the intarger are devied althoou they are longs
+		string eop;
 
-        cout << abb <<endl; //the long is outp
-        goto startPoint;
-    }
+		cout<< "-------------------------------------------------"<<endl;;
+		
+		estart:
 
-    else if (op == "factorial"){
+		cout<< "exponent: ";
+		cin >> eop;
 
-        int fm;
-        int fa = 0;
+		if (eop == "help"){
 
-        //fa = fm
+			cout<<"exp2"<<endl;
+			cout<<"exp"<<endl;
+			cout<<"exit"<<endl;
 
-        cout << "enter in a number to factorial" <<endl;
-        cin >> fm;
-        fa=fm;
+			goto estart;
+		}
+		else if(eop == "exp2"){
 
-        while (fm > 2) {
+			long in;
+			long out;
+			int i;
 
-            fa = (fa * (--fm));
-        }
-        cout << fa <<endl;
-        goto startPoint;
-    }
-    
-    else if (op == "exit") {//type exit to exit
+			cout <<"Exponents"<<endl;
 
-        cout << "bye bye" <<endl;
+			cout<<"squared: ";
+			cin >> in;
 
-        return 0;
-    }
+			i = 1;
 
-    else if (op == "exponents"){ //exonets
+			while(i < 2){
 
-        long fullnum; 
-        long fullnum2;
-        long powernum; 
+				i++;
+				out = (in * in);
 
-        cout << "enter a number" << endl;
-        cin >> fullnum; //input for the full number
-        cout << "to the power of" <<endl;
-        cin >> powernum;// the conter is defined heren 
+			}
 
-        fullnum2 = fullnum; 
+			cout<< in << "^2 = " << out <<endl;
 
-    
-        while (powernum > 1){
+			goto estart; 
+		}
+		else if(eop == "exp"){
 
-            fullnum = (fullnum * fullnum2); //in the funtion we mtiyply the number by it self
-            powernum = (powernum - 1); //this it the counter
-        }
+			long x;
+			long y;
+			long ys;
+			long xs;
 
-        cout << fullnum << endl;
+			cout <<"Exponents"<<endl;
 
-    }
+			cin >> x;
+			cout << "power of: ";
+			cin >> y;
+			
+			xs = x;
+			ys = y;
 
-    else if (op == "FOILing") { //the is foil
+			while (y > 1){
+				
+				y--;
+				x = (x * xs);
+			}
 
-        string fop;
+			cout << xs << "^" << ys << " = " << x <<endl;
 
-        startPoint2: // this is for looping back 
+			goto estart;
+		}
+		else if(eop == "exit"){
 
-        cout << "squaring x + a" <<endl;
-        cout << "computing (x + a) (x - a)" <<endl;
-        cout << "general FOILing" <<endl;
-        cout << "exit foiling" <<endl;
-        cout << "type here:";
-        cin >> fop;
+			goto startPoint;
+		}
+	}
+	else if (op == "pro"){
 
-        if (fop == "squaring") {
-            
-
-            long y; //this is the "long" that you define when you type in a number
-            long xco; //this is the x coefficient this equles "input" * 2
-            long cco; //this has nothing to do with "x"
-
-            cout << "(x + _)^2:";
-            cin >> y;
-
-            xco = (y * 2);
-            cco = (y * y);
-        
-
-            cout << "x^2 + ";
-            cout << xco;
-            cout << "x + ";
-            cout << cco <<endl;
-
-            goto startPoint2;
-
-        }
-
-        else if (fop == "computing") { //this program is for if you what to foil (x + "a") (x - "a")
-
-            long a; // this is the input 
-            long outp; // this is the output
-
-            cout <<"(x + _)(x - _):"; //this is when the example is displayed 
-            cin >> a; // this is when the int is defined
-
-            outp = (a * a); // all the math
-
-            cout << "x^2 - ";
-            cout << outp << endl;
-
-            goto startPoint2;
-        }
-
-        else if (fop == "general") {// this program will (x + "a")(x + "b")
-
-            long a;
-            long b;
-            long mab;
-            long aab;
-
-            cout << "(x + _)(x + b):"; // this is where the intager "a" is defined
-            cin >> a;
-            cout << "(x + a)(x + _):"; // this is where the intager "b" is defined
-            cin >> b;
-
-            mab = (a * b); //this is "a" and "b" are mautyplied
-            aab = (a + b); //this is where "a" and "b" get added
-
-            cout << "x^2 + ";
-            cout << aab;
-            cout << "x + ";
-            cout << mab << endl;  // every thing is outp
-
-            goto startPoint2; //this brings you back to the foiling menu
-        }
-
-        else if (fop == "exit") { // going to starpoint
-
-            goto startPoint; // at the end of the prog u get looped back to the begning of the prog
-
-
-
-        }
-
-    }
-    else if (op == "fraction"){
-
-        opf:
-
-        string opf;
-
-        cout << "type here:";
-        cin >> opf;
-
-        if (opf == "fadd"){
-            int a;
-            int b;
-            int c;
-            int d;
-
-            cout <<"fraction adding"<<endl;
-
-            cout << "1st fraction" <<endl;
-            cin >> a;
-            cin >> b;
-
-            cout << "2nd fraction" <<endl;
-            cin >> c;
-            cin >> d;
-
-        
-            if (b == d){
-
-                a = (a + c);
-
-                cout <<"your anwser" <<endl;
-                cout << a << "/" << b <<endl;
-            }
-            else if (b != d){
-
-                a = (d * a);
-                b = (d * b);
-                c = (b * c);
-            
-
-                a = (a + c);
-
-                cout <<"your anwser" <<endl;
-                cout << a << "/" << b <<endl;
-                goto opf;
-            
-
-            }
-        }
-        else if (opf == "fmulti"){
-
-            long a;
-            long b;
-            long c;
-            long d;
-
-            cout << "1st fraction" <<endl;
-            cin >> a;
-            cin >> b;
-
-            cout << "2nd fraction" <<endl;
-            cin >> c;
-            cin >> d;
-
-            a = (a * b);
-            c = (c * d);
-
-            cout << a << "/" << c <<endl;
-            goto opf;
-
-
-        }
-        else if (opf == "fdev"){
-
-
-            long a;
-            long b;
-            long c;
-            long d;
-
-            cout << "1st fraction" <<endl;
-            cin >> a;
-            cin >> b;
-
-            cout << "2nd fraction" <<endl;
-            cin >> c;
-            cin >> d;
-
-            a = (a * d);
-            b = (b * c);
-
-            cout << a << "/" << b << endl;
-
-            goto opf;
-        }
-
-        if (opf == "fsub"){
-            int a;
-            int b;
-            int c;
-            int d;
-
-            cout <<"fraction adding"<<endl;
-
-            cout << "1st fraction" <<endl;
-            cin >> a;
-            cin >> b;
-
-            cout << "2nd fraction" <<endl;
-            cin >> c;
-            cin >> d;
-
-        
-            if (b == d){
-
-                a = (a + c);
-
-                cout <<"your anwser" <<endl;
-                cout << a << "/" << b <<endl;
-            }
-            else if (b != d){
-
-                c = (- 1 * c);
-
-                a = (d * a);
-                b = (d * b);
-                c = (b * c);
-            
-
-                a = (a + c);
-
-                cout <<"your anwser" <<endl;
-                cout << a << "/" << b <<endl;
-
-                goto opf;
-            }
-            
-            else if (opf == "help"){
-
-                cout << "fadd" <<endl;
-                cout << "fmulti" <<endl;
-                cout << "fdev" <<endl;
-                cout << "fsub" <<endl;
-
-                goto opf;
-
-                }
-            
-                else if (opf == "exit"){
-
-                goto startPoint;
-                }
-
-
-            
-        }
-
-    }
-
-
-    else if (op == "about"){ //in case some one whats to know about the app they can type "about"
-
-        cout <<"               clone computers 2012"<<endl;
-        cout <<"SCOS is a simple calculator that is intergated in to you term so you "<<endl;
-        cout<<"can do compex math becues we know that calculators all use "<<endl;
-        cout<<"microcontroolers and are not that powerful. well this is the calculator "<<endl;
-        cout<<"for the modorn comptuer."<<endl;
-
-    }
-    else if (op == "procentage"){
 
         long a;
         long b;
         long out;
 
-        cout <<"type in the whole: ";
+        cout<< "percentage" <<endl;
+
+        cout <<"type in the whole: "; //take in the whole
         cin >> b;
-        cout <<"type in the part: ";
+        cout <<"type in the part: "; //take in the part
         cin >> a;
 
-        a = (a * 100);
-        out = (a / b);
+        a = (a * 100); //the part is muiltpluied by 100
+        out = (a / b); //part is / by the whole
 
-        cout << "%" << out << endl;
+        cout << "%" << out << endl; //the awnser is printed
+        
+	}
+	else if(op == "exit"){//exit the prgram
+
+		return 0;
+	}
 
 
-    }
 
-
-     
-
-    goto startPoint;
+	goto startPoint;
 }  
-
