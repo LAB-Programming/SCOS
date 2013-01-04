@@ -12,14 +12,14 @@ int main() {
 
 	string op = "";
 	
-	cout<<"welcome to SCOS"<<endl;
-	cout<<"type help it you need help"<<endl;
+	cout<<"welcome to SCOS"<<endl; //the introduction 
+	cout<<"type help it you need help"<<endl; //prompts the user to type help if they dont know the commands ro runt this prog
 
 	
 	while(op != "exit") {
 		cout<<"Operation: ";
 		cin >> op;
-		if (op == "help"){ //when you type "help" you can see all the commands
+		if (op == "help"){ //when you type "help" you can see all the commands that you can use
 
 			cout<<"add"<<endl;
 			cout<<"sub"<<endl;
@@ -28,7 +28,8 @@ int main() {
 			cout<<"pro"<<endl;
 			cout<<"exp"<<endl;
 			cout<<"fact"<<endl;
-			cout<<"exit"<<endl; //i know some one some day will tell me this help menu does not help any one at all :)
+			cout<<"exit"<<endl; 
+			cout<<"func"<<endl; //i know some one some day will tell me this help menu does not help any one at all :)
 
 			continue;
 		}
@@ -108,7 +109,7 @@ int main() {
 		}
 		else if(op == "exp"){//expnets
 
-			string eop = "";
+			string eop = "";  //to make shue that this is set to nothing
 
 			cout<< "-------------------------------------------------"<<endl;;
 			
@@ -216,9 +217,89 @@ int main() {
 			continue;
 
 		}
+		else if(op == "func"){
+
+			long x;
+			long y;
+			long x2;
+			long y2;
+			long rise;
+			long run;
+			long yint;
+			long sum;
+
+			cout << "enter in the 1st Coordinate"<<endl;
+			cout << "x: ";
+			cin >> x;
+			cout << "y: ";
+			cin >> y;
+			cout << "enter in the 2nd Coordinate" <<endl; //the first 
+			cout << "x: ";
+			cin >> x2;
+			cout << "y: ";
+			cin >> y2;
+
+			if ((x > 0 || y > 0) && (x2 > 0 || y2 > 0)){ //this checks to see if the any of the Coordinates are negative
+
+				run = (x - x2);
+				rise = (y - y2);
+
+				if (rise < 0){
+
+					rise = (-rise);
+				}
+				else if (run < 0){
+
+					run = (-run);
+				}
+
+				if (rise % run == 0){
+
+					sum = (rise / run);
+					cout << "your awnser is"<<endl;
+					cout << "y = " << sum << "x" <<endl;
+
+					continue;
+				}
+				else {
+
+					cout<<"y = "<< rise << "/" << run << "x" <<endl;
+
+					continue;
+				}
+			}
+			if ((x < 0) && (y < 0) && (x2 < 0) && (y2 < 0)){
+
+				x = (-x);
+				y = (-y);
+				x2 = (-x2);
+				y2 = (-y2);
+
+				run = (x - x2);
+				rise = (y - y2);
+
+				if (rise % run == 0){
+
+					sum = (rise / run);
+					cout << "your awnser is"<<endl;
+					cout << "y = " << sum << "x" <<endl;
+
+					continue;
+				}
+				else {
+
+					cout << "y = "<< rise << "/" << run << "x"<<endl;
+
+					
+					continue;
+				}
+			}
+		}
 	}
 
-	// my email is clonecomputers1@gmail.com feel free to email me if this program gose to hell or if you want to talk to me i enjoy meeting new people
-
+	/* my email is clonecomputers1@gmail.com feel free to email me if this program if there is a problem 
+	 or if you want to talk to me i much enjoy meeting new people
+	*/
+	
 	return 0;
 }  
