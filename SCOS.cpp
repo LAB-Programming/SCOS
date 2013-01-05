@@ -109,75 +109,77 @@ int main() {
 		}
 		else if(op == "exp"){//expnets
 
-			string eop = "";  //to make shue that this is set to nothing
+			string eop;  //to make shue that this is set to nothing
+			eop = " ";
 
-			cout<< "-------------------------------------------------"<<endl;;
+			cout<< "-------------------------------------------------"<<endl;
 			
-			while (eop != "exit")
-			cout<< ">: ";
-			cin >> eop;
+			while(eop != "exit"){
 
-			if (eop == "help"){
+				cout << ">: ";
+				cin >> eop;
 
-				cout<<"exp2"<<endl;
-				cout<<"exp"<<endl;
-				cout<<"exit"<<endl;
+				if (eop == "help"){
 
-				;
-			}
-			else if(eop == "exp2"){
+					cout<<"exp2"<<endl;
+					cout<<"exp"<<endl;
+					cout<<"exit"<<endl;
 
-				long in;
-				long out;
-				int i;
-
-				cout <<"Exponents"<<endl;
-
-				cout<<"squared: ";
-				cin >> in;
-
-				i = 1;
-
-				while(i < 2){
-
-					i++;
-					out = (in * in);
-
+					;
 				}
+				else if(eop == "exp2"){
 
-				cout<< in << "^2 = " << out <<endl;
+					long in;
+					long out;
+					int i;
 
+					cout <<"Exponents"<<endl;
+
+					cout<<"squared: ";
+					cin >> in;
+
+					i = 1;
+
+					while(i < 2){
+
+						i++;
+						out = (in * in);
+
+					}
+
+					cout<< in << "^2 = " << out <<endl;
+				}
 				
-			}
-			else if(eop == "exp"){
+				else if(eop == "exp"){
 
-				long x;
-				long y;
-				long ys;
-				long xs;
+					long x;
+					long y;
+					long ys;
+					long xs;
 
-				cout <<"Exponents"<<endl;
+					cout <<"Exponents"<<endl;
 
-				cin >> x;
-				cout << "power of: ";
-				cin >> y;
-				
-				xs = x;
-				ys = y;
-
-				while (y > 1){
+					cin >> x;
+					cout << "power of: ";
+					cin >> y;
 					
-					y--;
-					x = (x * xs);
+					xs = x;
+					ys = y;
+
+					while (y > 1){
+						
+						y--;
+						x = (x * xs);
+					}
+
+					cout << xs << "^" << ys << " = " << x <<endl;
+
+					
 				}
+				else if(eop == "exit"){
 
-				cout << xs << "^" << ys << " = " << x <<endl;
-
-				
-			}
-			else if(eop == "exit"){
-
-				continue;
+					continue;
+				}
 			}
 		}
 		else if (op == "pro"){
