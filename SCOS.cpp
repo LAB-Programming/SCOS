@@ -17,7 +17,7 @@ int main() {
 
 	
 	while(op != "exit") {
-		cout<<"Operation: ";
+		cout<<">: ";
 		cin >> op;
 		if (op == "help"){ //when you type "help" you can see all the commands that you can use
 
@@ -114,7 +114,7 @@ int main() {
 			cout<< "-------------------------------------------------"<<endl;;
 			
 			while (eop != "exit")
-			cout<< "exponent: ";
+			cout<< ">: ";
 			cin >> eop;
 
 			if (eop == "help"){
@@ -219,81 +219,132 @@ int main() {
 		}
 		else if(op == "func"){
 
-			long x;
-			long y;
-			long x2;
-			long y2;
-			long rise;
-			long run;
-			long yint;
-			long sum;
+			string fop;
+			fop = " ";
 
-			cout << "enter in the 1st Coordinate"<<endl;
-			cout << "x: ";
-			cin >> x;
-			cout << "y: ";
-			cin >> y;
-			cout << "enter in the 2nd Coordinate" <<endl; //the first 
-			cout << "x: ";
-			cin >> x2;
-			cout << "y: ";
-			cin >> y2;
+			cout << "-------------------------------------------------" <<endl;
 
-			if ((x > 0 || y > 0) && (x2 > 0 || y2 > 0)){ //this checks to see if the any of the Coordinates are negative
 
-				run = (x - x2);
-				rise = (y - y2);
+			while(fop != "exit"){
 
-				if (rise < 0){
+				fop = " ";
 
-					rise = (-rise);
+				cout << ">: "; 
+				cin >> fop;
+
+				if(fop == "Coor"){
+
+					long x;
+					long y;
+					long x2;
+					long y2;
+					long rise;
+					long run;
+					long yint;
+					long sum;
+
+					cout << "enter in the 1st Coordinate"<<endl;
+					cout << "x: ";
+					cin >> x;
+					cout << "y: ";
+					cin >> y;
+					cout << "enter in the 2nd Coordinate" <<endl; //the first 
+					cout << "x: ";
+					cin >> x2;
+					cout << "y: ";
+					cin >> y2;
+
+					if ((x > 0 || y > 0) && (x2 > 0 || y2 > 0)){ //this checks to see if the any of the Coordinates are negative
+
+						run = (x - x2);
+						rise = (y - y2);
+
+						if (rise < 0){
+
+							rise = (-rise);
+						}
+						else if (run < 0){
+
+							run = (-run);
+						}
+
+						if (rise % run == 0){
+
+							sum = (rise / run);
+							cout << "your awnser is"<<endl;
+							cout << "y = " << sum << "x" <<endl;
+
+							
+						}
+						else {
+
+							cout<<"y = "<< rise << "/" << run << "x" <<endl;
+
+							
+						}
+					}
+					if ((x < 0) && (y < 0) && (x2 < 0) && (y2 < 0)){
+
+						x = (-x);
+						y = (-y);
+						x2 = (-x2);
+						y2 = (-y2);
+
+						run = (x - x2);
+						rise = (y - y2);
+
+						if (rise % run == 0){
+
+							sum = (rise / run);
+							cout << "your awnser is"<<endl;
+							cout << "y = " << sum << "x" <<endl;
+
+							
+						}
+						else {
+
+							cout << "y = "<< rise << "/" << run << "x"<<endl;
+
+							
+							
+						}
+					}
 				}
-				else if (run < 0){
+				else if (fop == "help"){
 
-					run = (-run);
+					cout << "slop" <<endl;
+					cout << "Coor" <<endl;
+					cout << "exit" <<endl;
 				}
-
-				if (rise % run == 0){
-
-					sum = (rise / run);
-					cout << "your awnser is"<<endl;
-					cout << "y = " << sum << "x" <<endl;
-
-					continue;
-				}
-				else {
-
-					cout<<"y = "<< rise << "/" << run << "x" <<endl;
-
-					continue;
-				}
-			}
-			if ((x < 0) && (y < 0) && (x2 < 0) && (y2 < 0)){
-
-				x = (-x);
-				y = (-y);
-				x2 = (-x2);
-				y2 = (-y2);
-
-				run = (x - x2);
-				rise = (y - y2);
-
-				if (rise % run == 0){
-
-					sum = (rise / run);
-					cout << "your awnser is"<<endl;
-					cout << "y = " << sum << "x" <<endl;
-
-					continue;
-				}
-				else {
-
-					cout << "y = "<< rise << "/" << run << "x"<<endl;
+				else if (fop == "slop"){
 
 					
-					continue;
+					long x;
+					long yinter;
+
+					cout << "what is the y-intersept:"; //intakes y-intersept
+					cin >> yinter;
+
+					cout << "x:"; //take in the x time value
+					cin >> x;
+
+					cout << "y = " << x <<"x + " << yinter <<endl;
+
+					long ac;
+					long nac;
+
+					ac = (yinter + x);
+
+					nac = (yinter - x);
+
+					cout << "(1, " << ac << ")" <<endl;
+					cout << "(0, " << yinter << ")" <<endl;
+					cout << "(-1, " << nac << ")" <<endl;
+
+					
 				}
 			}
+			continue;
 		}
 	}
 
