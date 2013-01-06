@@ -27,9 +27,8 @@ int main() {
 			cout<<"mul"<<endl;
 			cout<<"pro"<<endl;
 			cout<<"exp"<<endl;
-			cout<<"fact"<<endl;
-			cout<<"exit"<<endl; 
-			cout<<"func"<<endl; //i know some one some day will tell me this help menu does not help any one at all :)
+			cout<<"func"<<endl;
+			cout<<"exit"<<endl;//i know some one some day will tell me this help menu does not help any one at all :)
 
 			continue;
 		}
@@ -86,8 +85,6 @@ int main() {
 			cout << x <<" * "<< y <<" = "<< sum <<endl;
 
 			continue;
-
-
 		}
 		else if(op == "dev"){//division
 
@@ -105,7 +102,6 @@ int main() {
 
 			cout << x <<" / "<< y <<" = "<< sum <<endl;
 			continue;
-
 		}
 		else if(op == "exp"){//expnets
 
@@ -201,23 +197,6 @@ int main() {
 
 	        cout << "%" << out << endl; //the awnser is printed
 	        continue;
-	        
-		}
-		else if(op == "fact"){ //factorial
-
-			long num; //the number long is the number that is recording the input the only reson why this exists to show the equation at the end of the program
-			long sum; //the sum is the output number !num
-
-			cout<<"factorial"<<endl; 
-
-			cout<<"number: ";
-			cin >> num; //the number is read in 
-
-			sum = !num; //math magic stuff
-
-			cout << "!" << num << " = " << sum <<endl; //equartion of glory
-			continue;
-
 		}
 		else if(op == "func"){
 
@@ -346,7 +325,6 @@ int main() {
 					
 				}
 			}
-			continue;
 		}
 	}
 
