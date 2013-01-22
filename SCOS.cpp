@@ -5,6 +5,7 @@ using namespace std;
 prog: SCOS
 by: Gio Rescigno (clone computers)
 repo: LAB progaming
+V: 2.7.8
 */
 
 int main() {
@@ -208,122 +209,79 @@ int main() {
 
 			while(fop != "exit"){
 
-				fop = " ";
-
-				cout << ">: "; 
+				cout << ">:";
 				cin >> fop;
 
-				if(fop == "Coor"){
+				if(fop == "y=") {
 
-					long x;
-					long y;
-					long x2;
-					long y2;
-					long rise;
-					long run;
-					long yint;
-					long sum;
+					int x1;
+					int x2;
+					int y1;
+					int y2;
 
-					cout << "enter in the 1st Coordinate"<<endl;
-					cout << "x: ";
-					cin >> x;
+					cout<< "cwardnit 1" <<endl;
+					cout<< "x: ";
+					cin >> x1;
 					cout << "y: ";
-					cin >> y;
-					cout << "enter in the 2nd Coordinate" <<endl; //the first 
-					cout << "x: ";
+					cin >> y1;
+					cout<< "cwardnit 2" <<endl;
+					cout<< "x: ";
 					cin >> x2;
 					cout << "y: ";
 					cin >> y2;
 
-					if ((x > 0 || y > 0) && (x2 > 0 || y2 > 0)){ //this checks to see if the any of the Coordinates are negative
+					int m;
+					int x;
+					int y;
 
-						run = (x - x2);
-						rise = (y - y2);
+					x = (x1 - x2);
+					y = (y1 - y2);
+					m = (y / x);
 
-						if (rise < 0){
+					int b;
 
-							rise = (-rise);
-						}
-						else if (run < 0){
+					b = (y1 - (m * x1));
 
-							run = (-run);
-						}
+					if (y / x == 0 && y / x < 0){
 
-						if (rise % run == 0){
-
-							sum = (rise / run);
-							cout << "your awnser is"<<endl;
-							cout << "y = " << sum << "x" <<endl;
-
-							
-						}
-						else {
-
-							cout<<"y = "<< rise << "/" << run << "x" <<endl;
-
-							
-						}
+						cout << "y = " << m << "x + " << b <<endl;
 					}
-					if ((x < 0) && (y < 0) && (x2 < 0) && (y2 < 0)){
+					else {
 
-						x = (-x);
-						y = (-y);
-						x2 = (-x2);
-						y2 = (-y2);
-
-						run = (x - x2);
-						rise = (y - y2);
-
-						if (rise % run == 0){
-
-							sum = (rise / run);
-							cout << "your awnser is"<<endl;
-							cout << "y = " << sum << "x" <<endl;
-
-							
-						}
-						else {
-
-							cout << "y = "<< rise << "/" << run << "x"<<endl;
-
-							
-							
-						}
+						cout <<"y = (" << y << "/" << x << ")x + " << b <<endl; 
 					}
+
+					continue;
 				}
-				else if (fop == "help"){
+				else if(fop == "cor"){
 
-					cout << "slop" <<endl;
-					cout << "Coor" <<endl;
-					cout << "exit" <<endl;
+					int m;
+					int b;
+
+					cout << "m = ";
+					cin >> m;
+					cout << "b = ";
+					cin >> b;
+
+					cout << "y = " << m << "x + " << b <<endl;
+
+					int y1;
+					int y2;
+
+					y1 = (b + m);
+					y2 = (b - m);
+
+					cout << "(1, " << y1 << ") (0, " << b << ") (-1, " << y2 << ")" <<endl;
+
 				}
-				else if (fop == "slop"){
 
-					
-					long x;
-					long yinter;
+				else if(fop == "help"){
 
-					cout << "what is the y-intersept:"; //intakes y-intersept
-					cin >> yinter;
+					cout << "y="<<endl;
+					cout << "cor" <<endl;
 
-					cout << "x:"; //take in the x time value
-					cin >> x;
-
-					cout << "y = " << x <<"x + " << yinter <<endl;
-
-					long ac;
-					long nac;
-
-					ac = (yinter + x);
-
-					nac = (yinter - x);
-
-					cout << "(1, " << ac << ")" <<endl;
-					cout << "(0, " << yinter << ")" <<endl;
-					cout << "(-1, " << nac << ")" <<endl;
-
-					
-				}
+					continue;
+				}	
 			}
 		}
 	}
@@ -333,4 +291,4 @@ int main() {
 	*/
 	
 	return 0;
-}  
+}
