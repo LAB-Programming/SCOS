@@ -12,11 +12,11 @@ int main() {
     
     
 	string op = "";
-	
+    
 	cout<<"welcome to SCOS"<<endl; //the introduction
 	cout<<"type help it you need help"<<endl; //prompts the user to type help if they dont know the commands ro runt this prog
     
-	
+    
 	while(op != "exit") {
 		cout<<">: ";
 		cin >> op;
@@ -110,7 +110,7 @@ int main() {
 			eop = " ";
             
 			cout<< "-------------------------------------------------"<<endl;
-			
+            
 			while(eop != "exit"){
                 
 				cout << ">: ";
@@ -146,7 +146,7 @@ int main() {
                     
 					cout<< in << "^2 = " << out <<endl;
 				}
-				
+                
 				else if(eop == "exp"){
                     
 					long x;
@@ -159,19 +159,19 @@ int main() {
 					cin >> x;
 					cout << "power of: ";
 					cin >> y;
-					
+                    
 					xs = x;
 					ys = y;
                     
 					while (y > 1){
-						
+                        
 						y--;
 						x = (x * xs);
 					}
                     
 					cout << xs << "^" << ys << " = " << x <<endl;
                     
-					
+                    
 				}
 				else if(eop == "exit"){
                     
@@ -289,6 +289,6 @@ int main() {
 	/* my email is clonecomputers1@gmail.com feel free to email me if this program if there is a problem 
 	 or if you want to talk to me i much enjoy meeting new people
      */
-	
+    
 	return 0;
 }
