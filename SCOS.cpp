@@ -244,26 +244,119 @@ int func() {
 			cout << "(1, " << y1 << ") (0, " << b << ") (-1, " << y2 << ")" <<endl;
             
 		}
+		else if(fop == "int"){
+
+			long d; 
+			long b;
+			long m;
+			long a;
+
+			long x;
+			long y;
+
+			cout << "line 1 (y = Mx + B)" <<endl;
+			cout << "M = ";
+			cin >> m;
+			cout << "B = ";
+			cin >> b;
+
+			cout << " "<<endl;
+
+			cout << "lone 2 (y = Ax + D)" <<endl;
+			cout << "A = ";
+			cin >> a;
+			cout << "D = ";
+			cin >> d;
+
+			x = ((d - b) / (m - a));
+			y = ((m * x) + b);
+
+			cout << "you lines intersect at";
+			cout << " (" << x << ", " << y << ")" <<endl;
+
+
+		}
 		else if(fop == "help"){
             
-			cout << "y="<<endl;
+			cout << "y=" <<endl;
 			cout << "cor" <<endl;
+			cout << "int" <<endl;
             
 			continue;
 		}	
 	}
-return 0;
+
+	return 0;
+
 }
+int geo(){
+
+	string gop;
+
+	cout << "-------------------------------------------------"<<endl;
+	cout << "if you need help type 'help' " <<endl;
+
+	while(gop != "exit"){
+		cout << ">:";
+		cin >> gop;
+
+		if (gop == "help"){
+
+			cout<<"squ"<<endl;
+			cout<<"tri"<<endl;
+
+		}
+		else if (gop == "squ"){
+
+			cout<<"square"<<endl<<endl;
+
+			float bace;
+			float higeth;
+			float area;
+
+			cout<<"type in bace: ";
+			cin >> bace;
+
+			cout<<"type in higeth: ";
+			cin >> higeth;
+
+			area = bace * higeth;
+
+			cout << "area = " << area <<endl;
+
+		}
+		else if (gop == "tri"){
+
+			float bace;
+			float higeth;
+			float area;
+
+			cout<< "triangle"<<endl<<endl;
+
+			cout<<"type in bace: ";
+			cin >> bace;
+
+			cout<<"type in higeth: ";
+			cin >> higeth;
+
+			area = bace * higeth / 2;
+
+			cout << "area = " << area <<endl;
+		}
+	}
+}
+
 int main() {
     
     
 	string op = "";
     
 	cout<<"welcome to SCOS"<<endl; //the introduction
-	cout<<"type 'help' it you need help"<<endl; //prompts the user to type help if they dont know the commands ro runt this prog
+	cout<<"type 'help' it you need help"<<endl; //prompts the user to type help if they dont know the commands ro run this prog
     
-    
+    cout << "-------------------------------------------------"<<endl;
 	while(op != "exit") {
+
 		cout<<">:";
 		cin >> op;
 		if (op == "help"){ //when you type "help" you can see all the commands that you can use
@@ -302,14 +395,19 @@ int main() {
             dev();
             continue;
         }	
-		else if (op == "pro"){
+		else if (op == "pro"){//dose porcentages
             
         	pro();
 	        continue;
 		}
-		else if(op == "func"){
+		else if(op == "func"){//dose all kinds of fun stuff with lines with the equation y=mx+b soon there will be other shapes 
             
 			func();
+			continue;
+		}
+		else if(op == "geo"){
+
+			geo();
 			continue;
 		}
 	}
