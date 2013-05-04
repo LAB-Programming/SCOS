@@ -415,12 +415,6 @@ int main() {
 			cout << "Pong!!!!"<<endl;//just for fun!!!!
 			continue;
 		}
-		else if(op == "cd"){
-
-			cout << "this is not terminal"<<endl;;
-			continue;
-
-		}
 	}
     
 	/* my email is clonecomputers1@gmail.com feel free to email me if this program if there is a problem 
